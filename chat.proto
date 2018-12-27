@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package grpc;
+
+//format of evry message --> note moving from server to client and vice versa
+message Note {
+    string source = 1;
+    string destination = 2;
+    bytes message = 3;
+}
+message RateLimit {
+    string source = 1;
+    string destination = 2;
+    string message = 3;
+}
+
+service ChatServer {
+    // This bi-directional stream makes it possible to send and receive Notes between 2 persons
+    rpc ChatStream (Note) returns (stream Note);
+    rpc SendNote (Note) returns (RateLimit);
+}

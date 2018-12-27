@@ -1,0 +1,17 @@
+# Spartan Server Port
+port: 3000
+
+# 1-1 messaging
+users: [alice,bob,charlie,eve,foo,bar,baz,qux]
+
+max_num_messages_per_user: 5
+
+max_call_per_30_seconds_per_user: 3
+
+# Group messaging
+groups:
+ group1: [alice,bob,charlie,eve]
+ group2: [foo,bar,baz,qux]
+
+#Secret key for encryption and decryption
+key: b'[EX\xc8\xd5\xbfI{\xa2$\x05(\xd5\x18\xbf\xc0\x85)\x10nc\x94\x02)j\xdf\xcb\xc4\x94\x9d(\x9e'
